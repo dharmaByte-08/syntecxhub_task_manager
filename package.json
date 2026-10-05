@@ -1,0 +1,15 @@
+{
+  "name": "task-manager",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c auto \"npm run dev -w task-manager-server\" \"npm run dev -w task-manager-client\"",
+    "start": "npm run start -w task-manager-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
